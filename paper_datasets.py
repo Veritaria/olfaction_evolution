@@ -26,7 +26,7 @@ def make_primordial_dataset():
     task.save_proto(config, seed=seed, folder_name='primordial')
 
 
-def make_relabel_dataset(mode='small'):
+def make_relabel_dataset(mode='large'):
     """Generate dataset with n_trueclass, then relabel to fewer classes."""
     config = configs.input_ProtoConfig()
 

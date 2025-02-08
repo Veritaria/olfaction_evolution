@@ -155,7 +155,7 @@ def _vary_config_combinatorial(base_config, config_ranges):
         new_config = deepcopy(base_config)
 
         config_diff = dict()
-        indices = np.unravel_index(i, dims=dims)
+        indices = np.unravel_index(i, shape=dims)
         # Set up new config
         for key, index in zip(keys, indices):
             val = config_ranges[key][index]

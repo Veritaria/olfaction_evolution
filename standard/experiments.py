@@ -207,13 +207,18 @@ def rnn_relabel():
     config.ORN_NOISE_STD = 0.0
 
     config_ranges = OrderedDict()
-    config_ranges['TIME_STEPS'] = [1, 2, 3]
-    config_ranges['diagonal'] = [True, False]
-    config_ranges['lr'] = [1e-3, 5e-4, 2e-4, 1e-4]
+    # config_ranges['TIME_STEPS'] = [1, 2, 3]
+    # config_ranges['diagonal'] = [True, False]
+    # config_ranges['lr'] = [1e-3, 5e-4, 2e-4, 1e-4]
+    # config_ranges['data_dir'] = [
+    #     './datasets/proto/relabel_100_100',
+    #     './datasets/proto/relabel_200_100',
+    #     './datasets/proto/relabel_500_100']
+    config_ranges['TIME_STEPS'] = [2, 3]
+    config_ranges['diagonal'] = [False]
+    config_ranges['lr'] = [2e-4]
     config_ranges['data_dir'] = [
-        './datasets/proto/relabel_100_100',
-        './datasets/proto/relabel_200_100',
-        './datasets/proto/relabel_500_100']
+        './datasets/proto/relabel_200_100']
 
     configs = vary_config(config, config_ranges, mode='combinatorial')
     return configs
